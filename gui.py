@@ -6,7 +6,7 @@ from tkinter import ttk
 # 导入 filedialog 库
 from tkinter import filedialog
 # 导入主要逻辑代码
-import main
+import 工作.main
 # 导入 sys 库
 import sys
 
@@ -52,7 +52,7 @@ def test_db_connection():
     database = db_var.get()
     port=port_var.get()
     # 调用主要逻辑代码中的一个函数，来检测数据库是否连接成功
-    if main.test_db_connection(host, user, password, database,port):
+    if 工作.main.test_db_connection(host, user, password, database,port):
         # 弹出提示框，显示数据库连接成功
         tk.messagebox.showinfo('测试连接', '数据库连接成功！')
     else:
@@ -105,7 +105,7 @@ def run():
     excel_path = excel_path_var.get()
     port=port_var.get()
     # 调用主要逻辑代码，并传递参数
-    main.execute_sql_to_excel(host, user, password,
+    工作.main.execute_sql_to_excel(host, user, password,
                               database,
                               sql_path,
                               excel_path,port)
@@ -141,5 +141,5 @@ def redirect_print(text):
 # 调用 redirect_print 函数，传入文本框对象
 redirect_print(text)
 
-# 进入主循环
+# 进入主循环 fff
 window.mainloop()
